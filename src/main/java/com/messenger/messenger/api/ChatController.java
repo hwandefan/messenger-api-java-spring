@@ -19,6 +19,7 @@ public class ChatController {
         this.userService = userService;
     }
 
+    //Send message from user with token to another user by id
     @PostMapping("send")
     public void sendMessage(@RequestHeader(value = "Authorization",required = false) String token,
                             @RequestParam(value = "message", required = true, defaultValue = "") String message,
@@ -32,6 +33,7 @@ public class ChatController {
 
     }
 
+    //Get all messages between token user and user by id
     @GetMapping("getMessages")
     public List<Chat> getMessage(@RequestHeader(value = "Authorization",required = false) String token,
                                  @RequestParam(value = "whom", required = true) UUID friend){

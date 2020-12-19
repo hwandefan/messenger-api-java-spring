@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
+//Chat model for DB migration
 public class Chat {
     private final UUID id;
     @NotBlank

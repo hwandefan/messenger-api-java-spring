@@ -15,7 +15,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-
+//Realization of DAO functions
 @Repository("postgres")
 public class DataAccessService implements Dao {
     private final JdbcTemplate jdbcTemplate;

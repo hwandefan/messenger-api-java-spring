@@ -17,11 +17,13 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
+    //Create token
     public String createAuthentificationToken(User user){
         final String token = jwtTokenUtil.generateToken(user);
         return  token;
     }
 
+    //Validating
     public Boolean validateToken(String token, List<User> list) {
         if(token == null) return false;
         return jwtTokenUtil.validateToken(token, list);

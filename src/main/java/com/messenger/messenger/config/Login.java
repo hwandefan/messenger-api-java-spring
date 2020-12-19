@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotBlank;
 
+//Data handler for login
 public class Login {
     @NotBlank
     private String login;

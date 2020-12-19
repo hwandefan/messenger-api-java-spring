@@ -17,28 +17,33 @@ public class UserController {
         this.userService = userService;
     }
 
+    //Call - Get All users function
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    //Call - Register function
     @PostMapping("signup")
     public void singup(@RequestBody User user){
         userService.addUser(user);
     }
 
+    //Call - login function and gets token
     @PostMapping("signin")
     public String signin(@RequestBody Login loginData)
     {
         return  userService.logIn(loginData);
     }
 
+    //Call - get all user's friends by token
     @GetMapping("get_friends")
     public List<User> getFriends(@RequestHeader(value = "Authorization",required = false) String token) {
         if(!(userService.validateToken(token))) return null;
         return userService.getAllFiends(token);
     }
 
+    //Add friend to user account
     @GetMapping("add_friend")
     public void addFriend(@RequestHeader(value = "Authorization",required = false) String token,
     @RequestParam(value = "idFriend", required = false, defaultValue = "") String id){

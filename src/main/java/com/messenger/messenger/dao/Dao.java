@@ -14,7 +14,7 @@ public interface Dao {
       UUID id = UUID.randomUUID();
       return createUser(id, user);
     }
-
+    //All allowed functions to user in interface
     List<User> selectAllUsers();
     int updateUserById(UUID id, User user);
     String logIn(Login login);

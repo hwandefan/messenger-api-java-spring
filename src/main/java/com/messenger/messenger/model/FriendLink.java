@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
+//Friend link model for DB migration
 public class FriendLink {
     @NotBlank
     private final UUID id;
