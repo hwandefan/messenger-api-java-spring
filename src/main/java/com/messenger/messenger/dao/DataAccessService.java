@@ -85,10 +85,14 @@ public class DataAccessService implements Dao {
                 UUID.fromString(resultSet.getString("idfriend"))));
 
         return allUsers.stream().filter((x)->{
+            int a = 0;
             for(FriendLink f: friendLinks) {
-                return x.getId().equals(f.getIdFriend());
+                if(x.getId().equals(f.getIdFriend())) {
+                    a = 1;
+                    break;
+                }
             }
-            return false;
+            return a == 1;
         }).collect(Collectors.toList());
     }
 
