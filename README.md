@@ -1,6 +1,8 @@
 # messenger-api-java-spring
 Messenger - Server Api on Java Spring Boot <br />
 <br />
+Database: PostgresSQL on Docker. All migrations you can find at files. <br />
+<br />
 Commands for ServerApi: <br />
 /user - (@GET) Get all users <br />
 /user/signup - (@POST) Register user <br />
