@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'ls'
                 echo "Hello"
+                sh 'mvn clean package'
             }
         }
     }
